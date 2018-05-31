@@ -1,1 +1,43 @@
-Hello world
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title> my first code</title>
+	<link rel="stylesheet" href="css/main.css">
+	<style type="text/css">
+			#image{visibility: hidden;	height: auto; width: 100%;}
+	</style>
+</head>
+<body>
+	
+	<!-- <p id= "viewcode" onclick="show()">view my code</p> -->
+		<span>
+			<button onclick="show()" id="clickhere" > click here</button>
+		<img src="God-of-War-2.jpg" id="image">
+	</span>>
+
+	<section>
+		<h2>section 1 header</h2>
+		<p>para 1 in section header</p>
+	</section>
+	<section>
+		<h2>section 2 header</h2>
+		<p>para 2 in section header</p>
+	</section>
+		
+	<script type="text/javascript">
+		var show = function(){
+			var imageVar = document.getElementById("image")
+			var clickNew = document.getElementById("clickhere");
+			clickNew.innerHTML="yeahhhhh new message";
+			imageVar.style.visibility="visible";
+		}
+	</script>
+
+	<span class="highlight"><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script></span>
+
+
+	
+</body>
+</html>
