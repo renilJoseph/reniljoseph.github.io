@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title> my first code</title>
-	<link rel="stylesheet" href="css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>ohhohohoh title</title>
 	<style type="text/css">
-			#image{visibility: hidden;	height: auto; width: 100%;}
+		body { font-family: "Lato", sans-serif; font-size: 12px;}
+		#main{left: 15%; padding-left: 15%; color: #8c8c8c; position: absolute;}
+		.sidenavclass {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    display: block;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #00004d;
+    padding-top: 20%;
+    padding-left: 10%;
+}
+		.sidenavclass a:hover{color: #ffffff;}
+		.sidenavclass a{color: #a6a6a6; padding-left: 15%; }
+		.sidenavclass a:link{text-decoration: none;}
+		.rightSide{color: #000000; font-size: 18px;}
 	</style>
 </head>
 <body>
-	
-	<!-- <p id= "viewcode" onclick="show()">view my code</p> -->
-		<span>
-			<button onclick="show()" id="clickhere" > click here</button>
-		<!-- <img src="God-of-War-2.jpg" id="image"> -->
-		<img src="https://www.zing.cz/wp-content/uploads/2018/04/God-of-War-2.jpg" id="image">
-	</span>>
 
-	<section>
-		<h2>section 1 header</h2>
-		<p>para 1 in section header</p>
-	</section>
-	<section>
-		<h2>section 2 header</h2>
-		<p>para 2 in section header</p>
-	</section>
+	<div id="sidenav" >
+		<h2 style="color: #a6a6a6;padding-left: 15%; left: 0;"><Renil Joseph</h2>
+		<div class="sidenavclass">
+			
+			<a href="#">Home</a>
+			<br><br>
+			<a href="#">About</a>
+			<br><br>
+			<a href="#">Music</a>
+			<br><br>
+			<a href="#">Games</a>
+			<br><br>
+			<a href="#">Pictures</a>
+		</div>
 		
-	<script type="text/javascript">
-		var show = function(){
-			var imageVar = document.getElementById("image")
-			var clickNew = document.getElementById("clickhere");
-			clickNew.innerHTML="yeahhhhh new message";
-			imageVar.style.visibility="visible";
-		}
-	</script>
 
-	<span class="highlight"><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script></span>
+		<footer style="color: #a6a6a6; bottom: 0; left: 0;width: 15%; position: fixed;">
+			<p>copyright protected @ 2017-2018</p>
+		</footer>
+	</div>
 
 
-	
+<div id="main" class="rightSide">
+  <h3>Hi, This is my home page</h3>
+  <p >My interests are books, music, coding in effect creating things which makes life of common people easier</p>
+</div>
 </body>
 </html>
