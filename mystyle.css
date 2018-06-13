@@ -10,7 +10,7 @@ body { font-family: "Lato", sans-serif; font-size: 12px;}
     left: 0;
     font-size: 18px;
     color: #0d0d0d;
-    background-color: #d9d9d9;
+    background-color: #ffffff;
     padding-top: 18%;
     padding-left: 6%;
 }
@@ -41,6 +41,6 @@ body { font-family: "Lato", sans-serif; font-size: 12px;}
 
 
 }
-		.sidenavclass a:hover{color: #ffffff;}
+		.sidenavclass a:hover{color: #999966;}
 		.sidenavclass a{color: #0d0d0d; padding-left: 15%; }
 		.sidenavclass a:link{color:#0d0d0d ;text-decoration: none; padding-left: 2%;}
