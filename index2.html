@@ -1,43 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title> my first code</title>
-	<link rel="stylesheet" href="css/main.css">
-	<style type="text/css">
-			#image{visibility: hidden;	height: auto; width: 100%;}
-		body { background-color: #FFFFFF; /* light gray */ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 500; font-size: 14px; color: #1e1e1e; /* dark gray */ }
-	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>reniljoseph/Home</title>
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<link href="//fonts.googleapis.com/css?family=Lato:900,300" rel="stylesheet" type="text/css">
+
 </head>
 <body>
+
+	<div id="sidenav" class="sidenavclass" >
+
+		<div >
+			<a href="https://github.com/renilJoseph"><i class="fa fa-github" style="font-size:24px"></i></a>
+			<a href="https://www.linkedin.com/in/renil-joseph-0740a1b8/"><i class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+			<a href="mailto:renil.joseph93@gmail.com"><i class="fa fa-envelope" style="font-size:24px"></i></a>
+		</div>
+
+		<h3 id="myName"><a href="index.html">Renil Joseph .</a></h3>
+		<br>
+
+		<a href="about.html">About</a>
+		<br><br>
+		<a href="music.html">Music</a>
+		<br><br>
+		<a href="games.html">Games</a>
+		<br><br>
+		<a href="quotes.html">Books & Quotes</a>
 	
-	<!-- <p id= "viewcode" onclick="show()">view my code</p> -->
-
-			<button onclick="show()" id="clickhere" > click here</button>
-		<img src="https://www.zing.cz/wp-content/uploads/2018/04/God-of-War-2.jpg" id="image">
-
-	<section>
-		<h2>section 1 header</h2>
-		<p>para 1 in section header</p>
-	</section>
-	<section>
-		<h2>section 2 header</h2>
-		<p>para 2 in section header</p>
-	</section>
 		
-	<script type="text/javascript">
-		var show = function(){
-			var imageVar = document.getElementById("image")
-			var clickNew = document.getElementById("clickhere");
-			clickNew.innerHTML="yeahhhhh new message";
-			imageVar.style.visibility="visible";
-		}
-	</script>
+	</div>
 
-	<span class="highlight"><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script></span>
+	<footer id="footer" >
+		<p>© 2018. All rights reserved.</p>
+	</footer>
+
+	<div id="main" class="rightSide">
+
+		<script type="text/javascript" src="three.min.js">
+	  		var camera, scene, renderer;
+			var geometry, material, mesh;
+
+			init();
+			animate();
+
+			function init() {
+
+					camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+				camera.position.z = 1;
+
+				scene = new THREE.Scene();
+
+				geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+				material = new THREE.MeshNormalMaterial();
+
+				mesh = new THREE.Mesh( geometry, material );
+				scene.add( mesh );
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+			}
+
+			function animate() {
+				console.log("&&&&&&&&&here");
+
+				requestAnimationFrame( animate );
+
+				mesh.rotation.x += 0.01;
+				mesh.rotation.y += 0.02;
+
+				renderer.render( scene, camera );
+
+			}
+	  </script>
+
+	  <h3 style="color:#333 ">Hi, This is my home page</h3>
+	  <p >My interests are books, music, coding in effect creating things which makes life of people easier</p>
 
 
-	
+
+	</div>
 </body>
 </html>
