@@ -48,3 +48,5 @@ body { font-family: "Lato", sans-serif; font-size: 12px;}
 		.sidenavclass a:hover{color: #999966;}
 		.sidenavclass a{color: #ffffff; padding-left: 15%; }
 		.sidenavclass a:link{color:#ffffff ;text-decoration: none; padding-left: 2%;}
+    
+    .rightSide a:link{text-decoration: none; }
