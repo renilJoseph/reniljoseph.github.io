@@ -49,6 +49,10 @@
 				light.position.set( 0, 0, 0 );
 				scene.add( light );
 
+				var light = new THREE.PointLight( 0xcc0000, 2, 3000 );
+				light.position.set( 50, -50, 0);
+				scene.add( light );
+
 				
 
 				// var path = "textures/cube/SwedishRoyalCastle/";
@@ -73,6 +77,9 @@
 				console.log( geometry.faces.length,  geometry.faces.length * N_OBJECTS );
 
 				var group = new THREE.Object3D();
+
+				var bottomLeafs =[];
+				var bottomLeafGroup = new THREE.Object3D();
 
 				var dd = 8000;
 
@@ -106,33 +113,6 @@
 				scene.add( light );
 				var directionalLight = new THREE.DirectionalLight( 0xFFAB00);
 				scene.add( directionalLight );
-
-				addHemisphereLight(scene);
-        		addDirectionalLight(scene);
-		
-				    function addHemisphereLight(scene) {
-			        var hemiLight = new THREE.HemisphereLight(0xff4444, 0x44ff44, 0.6);
-			        hemiLight.position.copy(new THREE.Vector3(0, 500, 0));
-			        hemiLight.name = 'hemiLight';
-			        scene.add(hemiLight);
-			    }
-			    function addDirectionalLight(scene) {
-			        var directionalLight = new THREE.DirectionalLight();
-			        directionalLight.position.copy(new THREE.Vector3(70, 40, 50));
-			        directionalLight.castShadow = true;
-			        directionalLight.shadowCameraVisible = false;
-			        directionalLight.shadowCameraNear = 25;
-			        directionalLight.shadowCameraFar = 200;
-			        directionalLight.shadowCameraLeft = -50;
-			        directionalLight.shadowCameraRight = 50;
-			        directionalLight.shadowCameraTop = 50;
-			        directionalLight.shadowCameraBottom = -50;
-			        directionalLight.shadowMapWidth = 2048;
-			        directionalLight.shadowMapHeight = 2048;
-			        directionalLight.visible = true;
-			        directionalLight.name = 'dirLight';
-			        scene.add(directionalLight);
-			    }
 
 
 				// var objectLoader = new THREE.ObjectLoader();
@@ -213,11 +193,33 @@
 
 						leafs[ i ] = leaf;
 
-						}
-					console.log('leafs '+leafs.length);
-
+					}
 					group.position.y = 5000;
 					scene.add(group);
+
+						
+					for ( var i = 0; i < 200; i ++ ) {
+
+						var leaf = obj.clone();
+
+						leaf.position.x = THREE.Math.randFloatSpread( dd );
+						leaf.position.y = window.innerHeight;
+						leaf.position.z = THREE.Math.randFloatSpread( dd );
+
+						leaf.rotation.x = Math.random() * 360 * ( Math.PI / 180 );
+						leaf.rotation.y = Math.random() * 360 * ( Math.PI / 180 );
+							// leaf.scale.x = leaf.scale.y = leaf.scale.z = Math.random() * 150 + 100;
+						leaf.scale.x = leaf.scale.y = leaf.scale.z = 0.8;
+
+						bottomLeafGroup.add( leaf );
+
+						// bottomLeafs[ i ] = leaf;
+	
+					}
+					console.log('leafs '+leafs.length);
+
+					bottomLeafGroup.position.y =  -3.5 * window.innerHeight;
+					scene.add(bottomLeafGroup);
 
 				 	animate();
 				} );
@@ -332,6 +334,7 @@
 					leaf.rotation.y += 0.5 * delta;
 
 					leaf.position.y = ( leaf.position.y - 500 * delta ) % 8000;
+
 
 				}
 
